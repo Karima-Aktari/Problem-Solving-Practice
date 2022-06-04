@@ -96,3 +96,22 @@ for (let i = 0; i < arr.length; i++) {
 console.log(num);
 console.log(str);
 
+
+// global scope
+const myGlobal = 10;
+
+const oppsGlobal = 7;
+function func() {
+  let output = "";
+  if (typeof myGlobal != "undefined") {
+    output += " Global is " + myGlobal;
+  }
+  if (typeof oppsGlobal != "undefined") {
+    output += " oppsGlobal is " + oppsGlobal;
+  }
+  console.log(output);
+}
+
+
+func()
+

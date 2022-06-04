@@ -7,6 +7,9 @@ const person = {
     }
 };
 
-const result = (person.fullName());
-const result1 = person.id;
-console.log(result, 'is', result1);
+// const result = (person.fullName());
+// const result1 = person.id;
+// console.log(result, 'is', result1);
+
+const result = person.fullName() + " " + "is " + person.id;
+console.log(result);
