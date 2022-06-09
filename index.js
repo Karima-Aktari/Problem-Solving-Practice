@@ -23,7 +23,7 @@ function towArraySum(arr1, arr2) {
   let sum = 0;
   for (let i = 0; i < arr1.length && arr2.length; i++) {
     sum = arr1[i] + arr2[i];
-    console.log(sum);
+    // console.log(sum);
   }
 }
 
@@ -50,7 +50,7 @@ for (let i = 0; i < array.length; i++) {
     removeDup.push(array[i]);
   } else {
     duplicate.push(array[i]);
-    console.log("duplicate number is", duplicate);
+    // console.log("duplicate number is", duplicate);
   }
 }
 // console.log(removeDup);
@@ -93,8 +93,8 @@ for (let i = 0; i < arr.length; i++) {
     str = str + arr[i] + " ";
   }
 }
-console.log(num);
-console.log(str);
+// console.log(num);
+// console.log(str);
 
 
 // global scope
@@ -109,9 +109,47 @@ function func() {
   if (typeof oppsGlobal != "undefined") {
     output += " oppsGlobal is " + oppsGlobal;
   }
-  console.log(output);
+  // console.log(output);
 }
 
 
-func()
+func();
+
+//
+function travelingDistanceCostCalculate(kilometer) {
+  let totalCost = 0;
+  let discount = 0;
+
+  const first90Kilo = 15;
+  const next120Kilo = 12;
+  const afterKilo = 8;
+
+  const costingForFirst90Kilos = 90 * first90Kilo;
+  const costingForNext120Kilos = 120 * next120Kilo;
+  const costingFor210Kilo = costingForFirst90Kilos + costingForNext120Kilos;
+
+
+  if (kilometer <= 90 && kilometer > 0) {
+    totalCost = costingForFirst90Kilos;
+  }
+
+  else if (kilometer <= 120 && kilometer > 0) {
+    totalCost = (kilometer - 90) * next120Kilo + costingForFirst90Kilos;
+
+  }
+
+  else {
+    totalCost = (kilometer - 210) * afterKilo + costingFor210Kilo;
+    if (kilometer > 500) {
+      discount = ((3 / 100) * totalCost)
+      totalCost = totalCost - discount;
+      console.log("you give discount", Math.round(discount));
+    }
+  }
+  return Math.round(totalCost);
+}
+
+const travelingArea = travelingDistanceCostCalculate(550);
+
+console.log(`${travelingArea} you give discount`);
 
