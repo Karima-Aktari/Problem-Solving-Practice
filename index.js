@@ -42,6 +42,7 @@ function isLeapYear(year) {
 
 isLeapYear(2012);
 
+//
 const array = [12, 32, 10, 13, 54, 12, 33, 54, 33];
 let removeDup = [];
 let duplicate = [];

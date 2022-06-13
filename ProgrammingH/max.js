@@ -49,7 +49,7 @@ findLargest(smallest);
 //Largest element with loop
 
 function largestElemenet(num) {
-    let maxNumber = 0;
+    let maxNumber = num[0];
     for (let i = 0; i < num.length; i++) {
         let element = num[i];
         if (element > maxNumber) {
@@ -62,18 +62,19 @@ function largestElemenet(num) {
 const largest = largestElemenet([54, 34, 675, 123, 34]);
 console.log(largest);
 
-// function largestElement(array) {
-//     let bigest = 0;
-//     for (let i = 0; i < array.length; i++) {
-//         if (bigest < array[i]) {
-//             let arrayIndex = array[i];
-//             bigest = arrayIndex;
-//         }
-//     }
-//     return bigest;
-// }
+//
+function largestElement(array) {
+    let bigest = array[0];
+    for (let i = 0; i < array.length; i++) {
+        if (bigest < array[i]) {
+            let arrayIndex = array[i];
+            bigest = arrayIndex;
+        }
+    }
+    return bigest;
+}
 
-// const biggestAge = [22, 34, 526, 78, 67];
+const biggestAge = [22, 34, 526, 78, 67];
 
-// const getLargest = largestElement(biggestAge);
-// console.log(getLargest);
+const getLargest = largestElement(biggestAge);
+console.log(getLargest);
